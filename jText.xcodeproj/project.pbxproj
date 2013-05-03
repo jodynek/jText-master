@@ -1,0 +1,353 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		92581CBE172C2E030094DBC4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92581CBD172C2E030094DBC4 /* Cocoa.framework */; };
+		92581CC8172C2E030094DBC4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92581CC6172C2E030094DBC4 /* InfoPlist.strings */; };
+		92581CCA172C2E030094DBC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92581CC9172C2E030094DBC4 /* main.m */; };
+		92581CCE172C2E030094DBC4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 92581CCC172C2E030094DBC4 /* Credits.rtf */; };
+		92581CD1172C2E030094DBC4 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 92581CD0172C2E030094DBC4 /* Document.m */; };
+		92581CD4172C2E030094DBC4 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92581CD2172C2E030094DBC4 /* Document.xib */; };
+		92581CD7172C2E030094DBC4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92581CD5172C2E030094DBC4 /* MainMenu.xib */; };
+		9258F7D4172E4EB1000433EB /* NoodleLineNumberMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9258F7D1172E4EB1000433EB /* NoodleLineNumberMarker.m */; };
+		9258F7D5172E4EB1000433EB /* NoodleLineNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9258F7D3172E4EB1000433EB /* NoodleLineNumberView.m */; };
+		9258F7D8172E4FF8000433EB /* MarkerLineNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9258F7D7172E4FF8000433EB /* MarkerLineNumberView.m */; };
+		92E052A71731293700809B70 /* jTXT.icns in Resources */ = {isa = PBXBuildFile; fileRef = 92E052A61731293700809B70 /* jTXT.icns */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		92581CBA172C2E030094DBC4 /* jText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jText.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92581CBD172C2E030094DBC4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		92581CC0172C2E030094DBC4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		92581CC1172C2E030094DBC4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		92581CC2172C2E030094DBC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		92581CC5172C2E030094DBC4 /* jText-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "jText-Info.plist"; sourceTree = "<group>"; };
+		92581CC7172C2E030094DBC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92581CC9172C2E030094DBC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92581CCB172C2E030094DBC4 /* jText-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jText-Prefix.pch"; sourceTree = "<group>"; };
+		92581CCD172C2E030094DBC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		92581CCF172C2E030094DBC4 /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		92581CD0172C2E030094DBC4 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		92581CD3172C2E030094DBC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Document.xib; sourceTree = "<group>"; };
+		92581CD6172C2E030094DBC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9258F7D0172E4EB1000433EB /* NoodleLineNumberMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberMarker.h; sourceTree = "<group>"; };
+		9258F7D1172E4EB1000433EB /* NoodleLineNumberMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberMarker.m; sourceTree = "<group>"; };
+		9258F7D2172E4EB1000433EB /* NoodleLineNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberView.h; sourceTree = "<group>"; };
+		9258F7D3172E4EB1000433EB /* NoodleLineNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberView.m; sourceTree = "<group>"; };
+		9258F7D6172E4FF8000433EB /* MarkerLineNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkerLineNumberView.h; sourceTree = "<group>"; };
+		9258F7D7172E4FF8000433EB /* MarkerLineNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkerLineNumberView.m; sourceTree = "<group>"; };
+		92E052A61731293700809B70 /* jTXT.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = jTXT.icns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92581CB7172C2E030094DBC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92581CBE172C2E030094DBC4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		92581CB1172C2E030094DBC4 = {
+			isa = PBXGroup;
+			children = (
+				92E052A61731293700809B70 /* jTXT.icns */,
+				92581CC3172C2E030094DBC4 /* jText */,
+				92581CBC172C2E030094DBC4 /* Frameworks */,
+				92581CBB172C2E030094DBC4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92581CBB172C2E030094DBC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92581CBA172C2E030094DBC4 /* jText.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92581CBC172C2E030094DBC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92581CBD172C2E030094DBC4 /* Cocoa.framework */,
+				92581CBF172C2E030094DBC4 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92581CBF172C2E030094DBC4 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92581CC0172C2E030094DBC4 /* AppKit.framework */,
+				92581CC1172C2E030094DBC4 /* CoreData.framework */,
+				92581CC2172C2E030094DBC4 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		92581CC3172C2E030094DBC4 /* jText */ = {
+			isa = PBXGroup;
+			children = (
+				92581CCF172C2E030094DBC4 /* Document.h */,
+				92581CD0172C2E030094DBC4 /* Document.m */,
+				92581CD2172C2E030094DBC4 /* Document.xib */,
+				92581CD5172C2E030094DBC4 /* MainMenu.xib */,
+				92581CC4172C2E030094DBC4 /* Supporting Files */,
+				9258F7D9172E5988000433EB /* Utils */,
+			);
+			path = jText;
+			sourceTree = "<group>";
+		};
+		92581CC4172C2E030094DBC4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92581CC5172C2E030094DBC4 /* jText-Info.plist */,
+				92581CC6172C2E030094DBC4 /* InfoPlist.strings */,
+				92581CC9172C2E030094DBC4 /* main.m */,
+				92581CCB172C2E030094DBC4 /* jText-Prefix.pch */,
+				92581CCC172C2E030094DBC4 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9258F7D9172E5988000433EB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9258F7D0172E4EB1000433EB /* NoodleLineNumberMarker.h */,
+				9258F7D1172E4EB1000433EB /* NoodleLineNumberMarker.m */,
+				9258F7D2172E4EB1000433EB /* NoodleLineNumberView.h */,
+				9258F7D3172E4EB1000433EB /* NoodleLineNumberView.m */,
+				9258F7D6172E4FF8000433EB /* MarkerLineNumberView.h */,
+				9258F7D7172E4FF8000433EB /* MarkerLineNumberView.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92581CB9172C2E030094DBC4 /* jText */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92581CDA172C2E030094DBC4 /* Build configuration list for PBXNativeTarget "jText" */;
+			buildPhases = (
+				92581CB6172C2E030094DBC4 /* Sources */,
+				92581CB7172C2E030094DBC4 /* Frameworks */,
+				92581CB8172C2E030094DBC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jText;
+			productName = jText;
+			productReference = 92581CBA172C2E030094DBC4 /* jText.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92581CB2172C2E030094DBC4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Petr Jodas";
+			};
+			buildConfigurationList = 92581CB5172C2E030094DBC4 /* Build configuration list for PBXProject "jText" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 92581CB1172C2E030094DBC4;
+			productRefGroup = 92581CBB172C2E030094DBC4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92581CB9172C2E030094DBC4 /* jText */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92581CB8172C2E030094DBC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92581CC8172C2E030094DBC4 /* InfoPlist.strings in Resources */,
+				92581CCE172C2E030094DBC4 /* Credits.rtf in Resources */,
+				92581CD4172C2E030094DBC4 /* Document.xib in Resources */,
+				92581CD7172C2E030094DBC4 /* MainMenu.xib in Resources */,
+				92E052A71731293700809B70 /* jTXT.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92581CB6172C2E030094DBC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92581CCA172C2E030094DBC4 /* main.m in Sources */,
+				92581CD1172C2E030094DBC4 /* Document.m in Sources */,
+				9258F7D4172E4EB1000433EB /* NoodleLineNumberMarker.m in Sources */,
+				9258F7D5172E4EB1000433EB /* NoodleLineNumberView.m in Sources */,
+				9258F7D8172E4FF8000433EB /* MarkerLineNumberView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		92581CC6172C2E030094DBC4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92581CC7172C2E030094DBC4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		92581CCC172C2E030094DBC4 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92581CCD172C2E030094DBC4 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		92581CD2172C2E030094DBC4 /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92581CD3172C2E030094DBC4 /* en */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		92581CD5172C2E030094DBC4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92581CD6172C2E030094DBC4 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92581CD8172C2E030094DBC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		92581CD9172C2E030094DBC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		92581CDB172C2E030094DBC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "jText/jText-Prefix.pch";
+				INFOPLIST_FILE = "jText/jText-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		92581CDC172C2E030094DBC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "jText/jText-Prefix.pch";
+				INFOPLIST_FILE = "jText/jText-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92581CB5172C2E030094DBC4 /* Build configuration list for PBXProject "jText" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92581CD8172C2E030094DBC4 /* Debug */,
+				92581CD9172C2E030094DBC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92581CDA172C2E030094DBC4 /* Build configuration list for PBXNativeTarget "jText" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92581CDB172C2E030094DBC4 /* Debug */,
+				92581CDC172C2E030094DBC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92581CB2172C2E030094DBC4 /* Project object */;
+}
