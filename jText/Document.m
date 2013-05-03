@@ -10,6 +10,9 @@
 //  NSError *zError = nil;
 //  [[NSDocumentController sharedDocumentController] openUntitledDocumentAndDisplay:YES error:&zError];
 //  NSLog(@"Error: %@",[zError localizedDescription]);
+//
+//	NSFontPanel *fontPanel = [NSFontPanel sharedFontPanel];
+// [fontPanel orderFront:sender];
 
 
 #import "Document.h"
@@ -25,7 +28,12 @@
   [_scrollView setVerticalRulerView:lineNumberView];
   [_scrollView setHasHorizontalRuler:NO];
   [_scrollView setHasVerticalRuler:YES];
-  [_scrollView setRulersVisible:YES];  
+  [_scrollView setRulersVisible:YES];
+  NSFontManager *fontManager = [NSFontManager sharedFontManager];
+  [fontManager setTarget:self];
+  NSColorPanel *cp = [NSColorPanel sharedColorPanel];
+  [cp setTarget:self];
+  [cp setAction:@selector(changeColor:)];
 }
 
 - (id)init
@@ -66,11 +74,24 @@
   [super windowControllerDidLoadNib:aController];
   [_txtEdit setTextColor:[NSColor whiteColor]];
   [_txtEdit setString:[zNSAttributedStringObj string]];
-  // default font
-  NSFont *font =  [NSFont userFixedPitchFontOfSize:[NSFont smallSystemFontSize]];
-  //NSFont *font = [NSFont fontWithName:@"Andale Mono" size:14];
-  [_txtEdit setFont:font];
-  [[_txtEdit textStorage] setFont:font];
+  
+  //get the saved font
+  NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+  NSMutableDictionary *fontDict = [NSMutableDictionary dictionaryWithDictionary:[userDefault objectForKey:@"userFonts"]];
+  NSData *oldFontAsData = [fontDict objectForKey:@"smallFontForList"];
+  NSFont *oldFont = [NSKeyedUnarchiver unarchiveObjectWithData:oldFontAsData];
+  if (!oldFont)
+    oldFont =  [NSFont userFixedPitchFontOfSize:[NSFont smallSystemFontSize]];
+  [_txtEdit setFont:oldFont];
+  [[_txtEdit textStorage] setFont:oldFont];
+  
+  // get font color
+  NSMutableDictionary *colorDict = [NSMutableDictionary dictionaryWithDictionary:[userDefault objectForKey:@"userColor"]];
+  NSData *oldColorData = [colorDict objectForKey:@"colorForList"];
+  NSColor *oldColor = [NSKeyedUnarchiver unarchiveObjectWithData:oldColorData];
+  if (!oldColor)
+    oldColor = [NSColor whiteColor];
+  [_txtEdit setTextColor:oldColor];
 }
 
 + (BOOL)autosavesInPlace
@@ -137,4 +158,47 @@
   return zData;
 } // end dataOfType
 
+- (IBAction)openDocument:(id)sender
+{
+  [[NSDocumentController sharedDocumentController] openDocument:sender];
+}
+
+- (IBAction)selectFont:(id)sender
+{
+	NSFontPanel *fontPanel = [NSFontPanel sharedFontPanel];
+  [fontPanel orderFront:sender];
+}
+
+- (IBAction)selectColor:(id)sender
+{
+  NSColorPanel *colorPanel = [NSColorPanel sharedColorPanel];
+  [colorPanel orderFront:sender];
+}
+
+- (void) changeFont:(id)sender
+{
+  NSFont *font = [[NSFontManager sharedFontManager] selectedFont];
+  [_txtEdit setFont:font];
+  [[_txtEdit textStorage] setFont:font];
+  // save config
+  NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+  NSMutableDictionary *fontDict = [NSMutableDictionary dictionaryWithDictionary:[userDefault objectForKey:@"userFonts"]];
+  NSData *newFontAsData = [NSKeyedArchiver archivedDataWithRootObject:font];
+  [fontDict setObject:newFontAsData forKey:@"smallFontForList"];
+  [userDefault setObject:fontDict forKey:@"userFonts"];
+  [userDefault synchronize];
+}
+
+- (void) changeColor:(id)sender
+{
+  NSColor *color = [[NSColorPanel sharedColorPanel] color];
+  [_txtEdit setTextColor:color];
+  // save config
+  NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+  NSMutableDictionary *colorDict = [NSMutableDictionary dictionaryWithDictionary:[userDefault objectForKey:@"userColor"]];
+  NSData *newColorAsData = [NSKeyedArchiver archivedDataWithRootObject:color];
+  [colorDict setObject:newColorAsData forKey:@"colorForList"];
+  [userDefault setObject:colorDict forKey:@"userColor"];
+  [userDefault synchronize];
+}
 @end

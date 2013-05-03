@@ -16,6 +16,9 @@
 }
 @property (unsafe_unretained) IBOutlet NSTextView *txtEdit;
 @property (weak) IBOutlet NSScrollView *scrollView;
+- (IBAction)openDocument:(id)sender;
+- (IBAction)selectFont:(id)sender;
+- (IBAction)selectColor:(id)sender;
 
 
 @end
