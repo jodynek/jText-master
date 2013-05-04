@@ -69,6 +69,36 @@
   return iLines;
 }
 
+
+-(NSRange)textView:(NSTextView *)textView willChangeSelectionFromCharacterRange:(NSRange)oldSelectedCharRange toCharacterRange:(NSRange)newSelectedCharRange
+{
+  // get current row
+  NSRange selectionRange = newSelectedCharRange;
+  unsigned currentRow = 0, length =  (unsigned)selectionRange.location;
+  NSString *s = [_txtEdit string];
+  NSRange range = NSMakeRange(0,0);
+	unsigned end;
+	unsigned contentsEnd = 0;
+	while (contentsEnd < length)
+	{
+		[s getLineStart:Nil end:&end contentsEnd:&contentsEnd forRange:range];
+		range.location = end;
+		range.length = 0;
+    currentRow++;
+	}
+  if (currentRow == 0)
+    currentRow = 1;
+  
+  // get current col
+  unsigned int selection = (unsigned)selectionRange.location;
+  end = (unsigned)[[_txtEdit string]
+                                lineRangeForRange:selectionRange].location-1;
+  unsigned currentCol = (selection-end);
+  //NSLog(@"Cursor pos: row %d, col %d", currentRow, currentCol);
+  [_lblEditPos setStringValue:[NSString stringWithFormat:@"Position: %d, %d   Total lines: %d", currentCol, currentRow, [self getLinesCount]]];
+  return newSelectedCharRange;
+}
+
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
   [super windowControllerDidLoadNib:aController];
@@ -102,9 +132,6 @@
 - (void) textDidChange: (NSNotification *) notification
 {
   zNSAttributedStringObj = [_txtEdit textStorage];
-  NSLog(@"Lines count: %d", [self getLinesCount]);
-  NSInteger insertionPoint = [[[_txtEdit selectedRanges] objectAtIndex:0] rangeValue].location;
-  NSLog(@"Current position: %d", insertionPoint);
 }
 
 - (BOOL)readFromData:(NSData *)pData
@@ -158,11 +185,6 @@
   return zData;
 } // end dataOfType
 
-- (IBAction)openDocument:(id)sender
-{
-  [[NSDocumentController sharedDocumentController] openDocument:sender];
-}
-
 - (IBAction)selectFont:(id)sender
 {
 	NSFontPanel *fontPanel = [NSFontPanel sharedFontPanel];
@@ -173,6 +195,13 @@
 {
   NSColorPanel *colorPanel = [NSColorPanel sharedColorPanel];
   [colorPanel orderFront:sender];
+}
+
+- (IBAction) printShowingPrintPanel:(id)sender
+{
+  NSTextView *textView = [[NSTextView alloc] initWithFrame:NSMakeRect(0, 0, 468, 648)];
+  [textView setString:[_txtEdit string]];
+  [textView print:sender];
 }
 
 - (void) changeFont:(id)sender
