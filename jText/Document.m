@@ -162,7 +162,6 @@
   } // end if
   //NSLog(@"%@",[zNSAttributedStringObj string]);
   return YES;
-  
 } // end readFromData
 
 - (NSData *)dataOfType:(NSString *)pTypeName error:(NSError **)pOutError
